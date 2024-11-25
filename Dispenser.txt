@@ -1,0 +1,26 @@
+!DOCTYPE html>
+<html>
+<head>
+  <title>Control de la base del transistor </title>
+  <style>
+  </style>
+</head>
+<body>
+  <h1>Control de la base del transistor</h1>
+
+  <button onclick="controlBaseTransistor('on')">ENCENDER</button>
+  <button onclick="controlBaseTransistor('off')">APAGAR</button>
+
+  <script>
+    function controlBaseTransistor(state) {
+  fetch('/control?state=' + state)
+    .then(response => {
+      console.log('Respuesta:', response);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+  </script>
+</body>
+</html>
